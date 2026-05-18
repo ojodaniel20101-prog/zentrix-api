@@ -935,6 +935,78 @@
         <span class="nav-tag tag-get">GET</span>
       </a>
 
+      <a class="nav-item" href="#anime-search" onclick="scrollTo('anime-search',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L15 10H23L17 15L19 23L12 18L5 23L7 15L1 10H9L12 2Z"/>
+        </svg>
+        Anime Search
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#lyrics-search" onclick="scrollTo('lyrics-search',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18V5l12-2v13M9 9l12-2"/>
+        </svg>
+        Lyrics Search
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#quotes-random" onclick="scrollTo('quotes-random',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 21c0 0 7-1 11-8s1-16-4-17-7 6-7 12c0 1.25.756 2.08.75 2.08"/>
+        </svg>
+        Random Quotes
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#jokes-random" onclick="scrollTo('jokes-random',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+        </svg>
+        Random Jokes
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#news" onclick="scrollTo('news',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="2"/><path d="M2 6h20M2 10h20M2 14h20M2 18h20"/>
+        </svg>
+        Latest News
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#weather" onclick="scrollTo('weather',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18c-4.97 0-9-2.686-9-6s4.03-6 9-6c.5-5.5 5.5-10 11-10 5.523 0 10 4.477 10 10"/>
+        </svg>
+        Weather Data
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#crypto" onclick="scrollTo('crypto',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 11h6"/>
+        </svg>
+        Crypto Prices
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#football" onclick="scrollTo('football',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path d="M12 7v10M8 10h8"/>
+        </svg>
+        Football Scores
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
+      <a class="nav-item" href="#bible" onclick="scrollTo('bible',this)">
+        <svg class="nav-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4"/>
+        </svg>
+        Bible Verse
+        <span class="nav-tag tag-get">GET</span>
+      </a>
+
     </nav>
 
     <div class="sidebar-footer">
@@ -956,7 +1028,7 @@
         </svg>
       </button>
       <div class="breadcrumb">
-        <span>Zentrix</span> / <span style="color:var(--text-secondary)">Movies</span> / <span>Endpoints</span>
+        <span>Zentrix</span> / <span style="color:var(--text-secondary)">All Endpoints</span> / <span>Documentation</span>
       </div>
       <div class="topbar-right">
         <div class="status-pill">
@@ -971,133 +1043,461 @@
 
       <!-- Hero -->
       <div class="page-hero">
-        <div class="page-eyebrow">Movies Collection</div>
-        <h1 class="page-title">Search &amp; Discover <em>Films</em></h1>
-        <p class="page-desc">Query and retrieve movie data with real-time search. Test endpoints directly in the playground below and inspect live JSON responses.</p>
+        <div class="page-eyebrow">Zentrix API</div>
+        <h1 class="page-title">Explore &amp; <em>Integrate</em></h1>
+        <p class="page-desc">Access a comprehensive suite of scrapers for movies, anime, lyrics, quotes, jokes, news, weather, crypto, football, and Bible verses. Test all endpoints directly below and inspect live JSON responses.</p>
       </div>
 
       <!-- ─── ENDPOINT: MOVIE SEARCH ─── -->
       <div id="movie-search" class="endpoint-card">
-
         <div class="endpoint-header">
           <div class="endpoint-meta">
             <div class="endpoint-name">
               Movie Search
               <span class="method-badge method-get">GET</span>
             </div>
-            <div class="endpoint-desc">Search for movies by title. Returns a list of matching results including title, year, rating, and metadata.</div>
+            <div class="endpoint-desc">Search for movies by title. Returns matching results with title, poster, and detail links.</div>
             <div class="endpoint-url-row">
-              <div class="endpoint-url" id="urlDisplay">https://web-production-cc716.up.railway.app/movies/search</div>
-              <button class="copy-btn" onclick="copyUrl()" title="Copy URL">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                </svg>
+              <div class="endpoint-url" id="urlDisplay-movie">https://web-production-cc716.up.railway.app/movies/search</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-movie')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               </button>
             </div>
           </div>
         </div>
-
-        <!-- Tabs -->
         <div class="tabs">
-          <button class="tab-btn active" onclick="switchTab(this,'params')">Parameters</button>
-          <button class="tab-btn" onclick="switchTab(this,'tryit')">Try it</button>
-          <button class="tab-btn" onclick="switchTab(this,'response-schema')">Response schema</button>
+          <button class="tab-btn active" onclick="switchTab(this,'params-movie')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-movie')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-movie')">Response schema</button>
         </div>
-
-        <!-- PARAMS TAB -->
-        <div class="tab-panel active" id="tab-params">
+        <div class="tab-panel active" id="tab-params-movie">
           <table class="params-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
             <tbody>
-              <tr>
-                <td><span class="param-name">title</span></td>
-                <td><span class="param-type">string</span></td>
-                <td><span class="required-badge">required</span></td>
-                <td>The movie title (or partial title) to search for. Case-insensitive partial matches are supported.</td>
-              </tr>
+              <tr><td><span class="param-name">title</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The movie title to search for.</td></tr>
             </tbody>
           </table>
         </div>
-
-        <!-- TRY IT TAB -->
-        <div class="tab-panel" id="tab-tryit">
-
-          <div class="callout callout-info">
-            <span class="callout-icon">ℹ️</span>
-            <span>Requests are sent directly to the live API. Enter a movie title below and click <strong>Send Request</strong> to see the real JSON response.</span>
-          </div>
-
+        <div class="tab-panel" id="tab-tryit-movie">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Enter a movie title and click Send Request to see live results.</span></div>
           <div class="tryit-form">
             <div class="field-row">
-              <div class="field-group">
-                <label class="field-label">
-                  title <span class="req">*</span>
-                </label>
-                <input
-                  class="field-input"
-                  id="param-title"
-                  type="text"
-                  placeholder='e.g. "Inception", "The Matrix", "Dune"'
-                  onkeydown="if(event.key==='Enter')sendRequest()"
-                />
-              </div>
-              <button class="send-btn" id="sendBtn" onclick="sendRequest()">
-                Send Request
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="m5 12 7-7 7 7M12 5v14"/>
-                  <path d="M5 12h14"/>
-                </svg>
+              <div class="field-group"><label class="field-label">title <span class="req">*</span></label><input class="field-input" id="param-title-movie" type="text" placeholder='e.g. "Inception"' onkeydown="if(event.key==='Enter')sendRequest('movie')"/></div>
+              <button class="send-btn" id="sendBtn-movie" onclick="sendRequest('movie')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            </div>
+            <div class="response-area" id="responseArea-movie"><div class="response-header" id="responseHeader-movie" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-movie"></div></div><div class="response-block" id="responseBlock-movie"><div class="response-placeholder" id="responsePlaceholder-movie"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-movie">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns a JSON array of movie objects with title, poster URL, and detail link.</p>
+          <div class="schema-card"><span class="json-brace">[{"title": "string", "poster_url": "string", "detail_link": "string"}]</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: ANIME SEARCH ─── -->
+      <div id="anime-search" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Anime Search
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Search for anime by title. Returns anime information including episodes, rating, and cover image.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-anime">https://web-production-cc716.up.railway.app/anime/search</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-anime')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               </button>
             </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-anime')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-anime')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-anime')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-anime">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="param-name">title</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The anime title to search for.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-anime">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Enter an anime title and click Send Request to see live results.</span></div>
+          <div class="tryit-form">
+            <div class="field-row">
+              <div class="field-group"><label class="field-label">title <span class="req">*</span></label><input class="field-input" id="param-title-anime" type="text" placeholder='e.g. "Naruto"' onkeydown="if(event.key==='Enter')sendRequest('anime')"/></div>
+              <button class="send-btn" id="sendBtn-anime" onclick="sendRequest('anime')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            </div>
+            <div class="response-area" id="responseArea-anime"><div class="response-header" id="responseHeader-anime" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-anime"></div></div><div class="response-block" id="responseBlock-anime"><div class="response-placeholder" id="responsePlaceholder-anime"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-anime">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns a JSON array of anime objects with title, episodes, rating, cover URL, and detail link.</p>
+          <div class="schema-card"><span class="json-brace">[{"title": "string", "episodes": "integer", "rating": "float", "cover_url": "string", "detail_link": "string"}]</span></div>
+        </div>
+      </div>
 
-            <div class="response-area" id="responseArea">
-              <div class="response-header" id="responseHeader" style="display:none">
-                <span class="response-label">Response</span>
-                <div class="response-stats" id="responseStats"></div>
-              </div>
-              <div class="response-block" id="responseBlock">
-                <div class="response-placeholder" id="responsePlaceholder">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
-                    <polyline points="13 2 13 9 20 9"/>
-                  </svg>
-                  Response will appear here
-                </div>
-              </div>
+      <!-- ─── ENDPOINT: LYRICS SEARCH ─── -->
+      <div id="lyrics-search" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Lyrics Search
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Search for song lyrics by artist and song name. Returns the complete lyrics text.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-lyrics">https://web-production-cc716.up.railway.app/lyrics</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-lyrics')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
             </div>
           </div>
-
         </div>
-
-        <!-- RESPONSE SCHEMA TAB -->
-        <div class="tab-panel" id="tab-response-schema">
-          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">
-            The API returns a JSON array of movie objects. Each item in the array represents a matching movie.
-          </p>
-          <div class="schema-card">
-<span class="json-brace">[</span>
-  <span class="json-brace">{</span>
-    <span class="json-key">"id"</span>: <span class="json-type" style="color:var(--orange)">integer</span> <span style="color:var(--text-muted)">// Unique movie identifier</span>
-    <span class="json-key">"title"</span>: <span class="json-type" style="color:var(--purple)">string</span>  <span style="color:var(--text-muted)">// Full movie title</span>
-    <span class="json-key">"year"</span>: <span class="json-type" style="color:var(--orange)">integer</span> <span style="color:var(--text-muted)">// Release year</span>
-    <span class="json-key">"genre"</span>: <span class="json-type" style="color:var(--purple)">string</span>  <span style="color:var(--text-muted)">// Primary genre</span>
-    <span class="json-key">"rating"</span>: <span class="json-type" style="color:var(--orange)">float</span>   <span style="color:var(--text-muted)">// Score out of 10</span>
-    <span class="json-key">"director"</span>: <span class="json-type" style="color:var(--purple)">string</span> <span style="color:var(--text-muted)">// Director name (if available)</span>
-    <span class="json-key">"description"</span>: <span class="json-type" style="color:var(--purple)">string</span> <span style="color:var(--text-muted)">// Short synopsis</span>
-  <span class="json-brace">}</span>
-<span class="json-brace">]</span>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-lyrics')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-lyrics')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-lyrics')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-lyrics">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="param-name">artist</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The artist name.</td></tr>
+              <tr><td><span class="param-name">song</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The song title.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-lyrics">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Enter artist and song name to retrieve lyrics.</span></div>
+          <div class="tryit-form">
+            <div class="field-row">
+              <div class="field-group"><label class="field-label">artist <span class="req">*</span></label><input class="field-input" id="param-artist-lyrics" type="text" placeholder='e.g. "Eminem"' onkeydown="if(event.key==='Enter')sendRequest('lyrics')"/></div>
+              <div class="field-group"><label class="field-label">song <span class="req">*</span></label><input class="field-input" id="param-song-lyrics" type="text" placeholder='e.g. "Lose Yourself"' onkeydown="if(event.key==='Enter')sendRequest('lyrics')"/></div>
+              <button class="send-btn" id="sendBtn-lyrics" onclick="sendRequest('lyrics')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            </div>
+            <div class="response-area" id="responseArea-lyrics"><div class="response-header" id="responseHeader-lyrics" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-lyrics"></div></div><div class="response-block" id="responseBlock-lyrics"><div class="response-placeholder" id="responsePlaceholder-lyrics"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
           </div>
         </div>
-
+        <div class="tab-panel" id="tab-response-schema-lyrics">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns an object with artist, song, and lyrics text.</p>
+          <div class="schema-card"><span class="json-brace">{"artist": "string", "song": "string", "lyrics": "string"}</span></div>
+        </div>
       </div>
-      <!-- END ENDPOINT CARD -->
+
+      <!-- ─── ENDPOINT: RANDOM QUOTES ─── -->
+      <div id="quotes-random" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Random Quotes
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Fetch random inspirational quotes. No parameters required.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-quotes">https://web-production-cc716.up.railway.app/quotes/random</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-quotes')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-quotes')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-quotes')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-quotes')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-quotes">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No parameters required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-quotes">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Click Send Request to fetch random quotes.</span></div>
+          <div class="tryit-form">
+            <button class="send-btn" id="sendBtn-quotes" onclick="sendRequest('quotes')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            <div class="response-area" id="responseArea-quotes"><div class="response-header" id="responseHeader-quotes" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-quotes"></div></div><div class="response-block" id="responseBlock-quotes"><div class="response-placeholder" id="responsePlaceholder-quotes"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-quotes">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns an array of quote objects with quote text and author.</p>
+          <div class="schema-card"><span class="json-brace">[{"quote": "string", "author": "string"}]</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: RANDOM JOKES ─── -->
+      <div id="jokes-random" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Random Jokes
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Fetch a random joke. No parameters required.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-jokes">https://web-production-cc716.up.railway.app/jokes/random</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-jokes')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-jokes')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-jokes')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-jokes')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-jokes">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No parameters required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-jokes">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Click Send Request to fetch a random joke.</span></div>
+          <div class="tryit-form">
+            <button class="send-btn" id="sendBtn-jokes" onclick="sendRequest('jokes')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            <div class="response-area" id="responseArea-jokes"><div class="response-header" id="responseHeader-jokes" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-jokes"></div></div><div class="response-block" id="responseBlock-jokes"><div class="response-placeholder" id="responsePlaceholder-jokes"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-jokes">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns a joke object with the joke text.</p>
+          <div class="schema-card"><span class="json-brace">{"joke": "string"}</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: NEWS ─── -->
+      <div id="news" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Latest News
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Fetch latest news headlines. No parameters required.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-news">https://web-production-cc716.up.railway.app/news</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-news')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-news')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-news')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-news')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-news">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No parameters required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-news">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Click Send Request to fetch latest news headlines.</span></div>
+          <div class="tryit-form">
+            <button class="send-btn" id="sendBtn-news" onclick="sendRequest('news')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            <div class="response-area" id="responseArea-news"><div class="response-header" id="responseHeader-news" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-news"></div></div><div class="response-block" id="responseBlock-news"><div class="response-placeholder" id="responsePlaceholder-news"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-news">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns an array of news articles with title and URL.</p>
+          <div class="schema-card"><span class="json-brace">[{"title": "string", "url": "string"}]</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: WEATHER ─── -->
+      <div id="weather" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Weather Data
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Get current weather data for a specified city.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-weather">https://web-production-cc716.up.railway.app/weather</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-weather')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-weather')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-weather')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-weather')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-weather">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="param-name">city</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The city name to get weather for.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-weather">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Enter a city name to get current weather data.</span></div>
+          <div class="tryit-form">
+            <div class="field-row">
+              <div class="field-group"><label class="field-label">city <span class="req">*</span></label><input class="field-input" id="param-city-weather" type="text" placeholder='e.g. "London"' onkeydown="if(event.key==='Enter')sendRequest('weather')"/></div>
+              <button class="send-btn" id="sendBtn-weather" onclick="sendRequest('weather')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            </div>
+            <div class="response-area" id="responseArea-weather"><div class="response-header" id="responseHeader-weather" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-weather"></div></div><div class="response-block" id="responseBlock-weather"><div class="response-placeholder" id="responsePlaceholder-weather"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-weather">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns weather object with temperature, description, humidity, and wind speed.</p>
+          <div class="schema-card"><span class="json-brace">{"city": "string", "temperature": "float", "feels_like": "float", "description": "string", "humidity": "integer", "wind_speed": "float"}</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: CRYPTO ─── -->
+      <div id="crypto" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Crypto Prices
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Get top cryptocurrency prices. No parameters required.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-crypto">https://web-production-cc716.up.railway.app/crypto/prices</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-crypto')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-crypto')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-crypto')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-crypto')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-crypto">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No parameters required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-crypto">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Click Send Request to fetch top cryptocurrency prices.</span></div>
+          <div class="tryit-form">
+            <button class="send-btn" id="sendBtn-crypto" onclick="sendRequest('crypto')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            <div class="response-area" id="responseArea-crypto"><div class="response-header" id="responseHeader-crypto" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-crypto"></div></div><div class="response-block" id="responseBlock-crypto"><div class="response-placeholder" id="responsePlaceholder-crypto"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-crypto">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns an array of cryptocurrency objects with name, symbol, and price.</p>
+          <div class="schema-card"><span class="json-brace">[{"name": "string", "symbol": "string", "price": "string"}]</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: FOOTBALL ─── -->
+      <div id="football" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Football Scores
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Get latest football match scores and results. No parameters required.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-football">https://web-production-cc716.up.railway.app/football/scores</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-football')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-football')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-football')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-football')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-football">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">No parameters required</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-football">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Click Send Request to fetch latest football scores.</span></div>
+          <div class="tryit-form">
+            <button class="send-btn" id="sendBtn-football" onclick="sendRequest('football')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            <div class="response-area" id="responseArea-football"><div class="response-header" id="responseHeader-football" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-football"></div></div><div class="response-block" id="responseBlock-football"><div class="response-placeholder" id="responsePlaceholder-football"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-football">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns an array of match objects with league, teams, score, and status.</p>
+          <div class="schema-card"><span class="json-brace">[{"league": "string", "time": "string", "status": "string", "home_team": "string", "score": "string", "away_team": "string"}]</span></div>
+        </div>
+      </div>
+
+      <!-- ─── ENDPOINT: BIBLE ─── -->
+      <div id="bible" class="endpoint-card">
+        <div class="endpoint-header">
+          <div class="endpoint-meta">
+            <div class="endpoint-name">
+              Bible Verse
+              <span class="method-badge method-get">GET</span>
+            </div>
+            <div class="endpoint-desc">Retrieve a Bible verse by book, chapter, and verse number.</div>
+            <div class="endpoint-url-row">
+              <div class="endpoint-url" id="urlDisplay-bible">https://web-production-cc716.up.railway.app/bible</div>
+              <button class="copy-btn" onclick="copyUrl('urlDisplay-bible')" title="Copy URL">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'params-bible')">Parameters</button>
+          <button class="tab-btn" onclick="switchTab(this,'tryit-bible')">Try it</button>
+          <button class="tab-btn" onclick="switchTab(this,'response-schema-bible')">Response schema</button>
+        </div>
+        <div class="tab-panel active" id="tab-params-bible">
+          <table class="params-table">
+            <thead><tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><span class="param-name">book</span></td><td><span class="param-type">string</span></td><td><span class="required-badge">required</span></td><td>The Bible book name (e.g., "John").</td></tr>
+              <tr><td><span class="param-name">chapter</span></td><td><span class="param-type">integer</span></td><td><span class="required-badge">required</span></td><td>The chapter number.</td></tr>
+              <tr><td><span class="param-name">verse</span></td><td><span class="param-type">integer</span></td><td><span class="required-badge">required</span></td><td>The verse number.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tab-panel" id="tab-tryit-bible">
+          <div class="callout callout-info"><span class="callout-icon">ℹ️</span><span>Enter book, chapter, and verse to retrieve the Bible verse.</span></div>
+          <div class="tryit-form">
+            <div class="field-row">
+              <div class="field-group"><label class="field-label">book <span class="req">*</span></label><input class="field-input" id="param-book-bible" type="text" placeholder='e.g. "John"' onkeydown="if(event.key==='Enter')sendRequest('bible')"/></div>
+              <div class="field-group"><label class="field-label">chapter <span class="req">*</span></label><input class="field-input" id="param-chapter-bible" type="text" placeholder='e.g. "3"' onkeydown="if(event.key==='Enter')sendRequest('bible')"/></div>
+              <div class="field-group"><label class="field-label">verse <span class="req">*</span></label><input class="field-input" id="param-verse-bible" type="text" placeholder='e.g. "16"' onkeydown="if(event.key==='Enter')sendRequest('bible')"/></div>
+              <button class="send-btn" id="sendBtn-bible" onclick="sendRequest('bible')">Send Request<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 7-7 7 7M12 5v14M5 12h14"/></svg></button>
+            </div>
+            <div class="response-area" id="responseArea-bible"><div class="response-header" id="responseHeader-bible" style="display:none"><span class="response-label">Response</span><div class="response-stats" id="responseStats-bible"></div></div><div class="response-block" id="responseBlock-bible"><div class="response-placeholder" id="responsePlaceholder-bible"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>Response will appear here</div></div></div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tab-response-schema-bible">
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;line-height:1.7;">Returns a Bible verse object with book, chapter, verse, and text.</p>
+          <div class="schema-card"><span class="json-brace">{"book": "string", "chapter": "integer", "verse": "integer", "text": "string"}</span></div>
+        </div>
+      </div>
 
     </div>
   </main>
@@ -1136,9 +1536,9 @@ function scrollTo(id, el) {
 }
 
 /* ─── COPY URL ───────────────────────────────────────── */
-function copyUrl() {
-  const url = document.getElementById('urlDisplay').textContent.trim();
-  navigator.clipboard.writeText(url).then(() => showToast('✓  URL copied to clipboard'));
+function copyUrl(elementId) {
+  const url = document.getElementById(elementId).textContent.trim();
+  navigator.clipboard.writeText(url).then(() => showToast('✓ URL copied to clipboard'));
 }
 
 /* ─── TOAST ──────────────────────────────────────────── */
@@ -1163,7 +1563,6 @@ function highlight(json) {
     match => {
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
-          // key
           return `<span class="json-key">${match}</span>`;
         }
         return `<span class="json-str">${match}</span>`;
@@ -1176,32 +1575,102 @@ function highlight(json) {
 }
 
 /* ─── SEND REQUEST ───────────────────────────────────── */
-async function sendRequest() {
-  const title = document.getElementById('param-title').value.trim();
-  if (!title) {
-    document.getElementById('param-title').focus();
-    showToast('⚠  Please enter a movie title');
-    return;
+async function sendRequest(endpoint) {
+  let url, sendBtn, responseBlock, responsePlaceholder, responseHeader, responseStats;
+  
+  const baseUrl = 'https://web-production-cc716.up.railway.app';
+  
+  if (endpoint === 'movie') {
+    const title = document.getElementById('param-title-movie').value.trim();
+    if (!title) { showToast('⚠ Please enter a movie title'); return; }
+    url = `${baseUrl}/movies/search?title=${encodeURIComponent(title)}`;
+    sendBtn = document.getElementById('sendBtn-movie');
+    responseBlock = document.getElementById('responseBlock-movie');
+    responsePlaceholder = document.getElementById('responsePlaceholder-movie');
+    responseHeader = document.getElementById('responseHeader-movie');
+    responseStats = document.getElementById('responseStats-movie');
+  } else if (endpoint === 'anime') {
+    const title = document.getElementById('param-title-anime').value.trim();
+    if (!title) { showToast('⚠ Please enter an anime title'); return; }
+    url = `${baseUrl}/anime/search?title=${encodeURIComponent(title)}`;
+    sendBtn = document.getElementById('sendBtn-anime');
+    responseBlock = document.getElementById('responseBlock-anime');
+    responsePlaceholder = document.getElementById('responsePlaceholder-anime');
+    responseHeader = document.getElementById('responseHeader-anime');
+    responseStats = document.getElementById('responseStats-anime');
+  } else if (endpoint === 'lyrics') {
+    const artist = document.getElementById('param-artist-lyrics').value.trim();
+    const song = document.getElementById('param-song-lyrics').value.trim();
+    if (!artist || !song) { showToast('⚠ Please enter artist and song'); return; }
+    url = `${baseUrl}/lyrics?artist=${encodeURIComponent(artist)}&song=${encodeURIComponent(song)}`;
+    sendBtn = document.getElementById('sendBtn-lyrics');
+    responseBlock = document.getElementById('responseBlock-lyrics');
+    responsePlaceholder = document.getElementById('responsePlaceholder-lyrics');
+    responseHeader = document.getElementById('responseHeader-lyrics');
+    responseStats = document.getElementById('responseStats-lyrics');
+  } else if (endpoint === 'quotes') {
+    url = `${baseUrl}/quotes/random`;
+    sendBtn = document.getElementById('sendBtn-quotes');
+    responseBlock = document.getElementById('responseBlock-quotes');
+    responsePlaceholder = document.getElementById('responsePlaceholder-quotes');
+    responseHeader = document.getElementById('responseHeader-quotes');
+    responseStats = document.getElementById('responseStats-quotes');
+  } else if (endpoint === 'jokes') {
+    url = `${baseUrl}/jokes/random`;
+    sendBtn = document.getElementById('sendBtn-jokes');
+    responseBlock = document.getElementById('responseBlock-jokes');
+    responsePlaceholder = document.getElementById('responsePlaceholder-jokes');
+    responseHeader = document.getElementById('responseHeader-jokes');
+    responseStats = document.getElementById('responseStats-jokes');
+  } else if (endpoint === 'news') {
+    url = `${baseUrl}/news`;
+    sendBtn = document.getElementById('sendBtn-news');
+    responseBlock = document.getElementById('responseBlock-news');
+    responsePlaceholder = document.getElementById('responsePlaceholder-news');
+    responseHeader = document.getElementById('responseHeader-news');
+    responseStats = document.getElementById('responseStats-news');
+  } else if (endpoint === 'weather') {
+    const city = document.getElementById('param-city-weather').value.trim();
+    if (!city) { showToast('⚠ Please enter a city'); return; }
+    url = `${baseUrl}/weather?city=${encodeURIComponent(city)}`;
+    sendBtn = document.getElementById('sendBtn-weather');
+    responseBlock = document.getElementById('responseBlock-weather');
+    responsePlaceholder = document.getElementById('responsePlaceholder-weather');
+    responseHeader = document.getElementById('responseHeader-weather');
+    responseStats = document.getElementById('responseStats-weather');
+  } else if (endpoint === 'crypto') {
+    url = `${baseUrl}/crypto/prices`;
+    sendBtn = document.getElementById('sendBtn-crypto');
+    responseBlock = document.getElementById('responseBlock-crypto');
+    responsePlaceholder = document.getElementById('responsePlaceholder-crypto');
+    responseHeader = document.getElementById('responseHeader-crypto');
+    responseStats = document.getElementById('responseStats-crypto');
+  } else if (endpoint === 'football') {
+    url = `${baseUrl}/football/scores`;
+    sendBtn = document.getElementById('sendBtn-football');
+    responseBlock = document.getElementById('responseBlock-football');
+    responsePlaceholder = document.getElementById('responsePlaceholder-football');
+    responseHeader = document.getElementById('responseHeader-football');
+    responseStats = document.getElementById('responseStats-football');
+  } else if (endpoint === 'bible') {
+    const book = document.getElementById('param-book-bible').value.trim();
+    const chapter = document.getElementById('param-chapter-bible').value.trim();
+    const verse = document.getElementById('param-verse-bible').value.trim();
+    if (!book || !chapter || !verse) { showToast('⚠ Please enter book, chapter, and verse'); return; }
+    url = `${baseUrl}/bible?book=${encodeURIComponent(book)}&chapter=${encodeURIComponent(chapter)}&verse=${encodeURIComponent(verse)}`;
+    sendBtn = document.getElementById('sendBtn-bible');
+    responseBlock = document.getElementById('responseBlock-bible');
+    responsePlaceholder = document.getElementById('responsePlaceholder-bible');
+    responseHeader = document.getElementById('responseHeader-bible');
+    responseStats = document.getElementById('responseStats-bible');
   }
 
-  const sendBtn = document.getElementById('sendBtn');
-  const responseBlock = document.getElementById('responseBlock');
-  const responsePlaceholder = document.getElementById('responsePlaceholder');
-  const responseHeader = document.getElementById('responseHeader');
-  const responseStats = document.getElementById('responseStats');
-
-  // Loading state
   sendBtn.disabled = true;
   sendBtn.innerHTML = `<div class="spinner"></div> Sending…`;
   responseHeader.style.display = 'none';
-  responseBlock.innerHTML = `
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <span>Awaiting response…</span>
-    </div>`;
+  responseBlock.innerHTML = `<div class="loading-state"><div class="spinner"></div><span>Awaiting response…</span></div>`;
 
   const startTime = Date.now();
-  const url = `https://web-production-cc716.up.railway.app/movies/search?title=${encodeURIComponent(title)}`;
 
   try {
     const res = await fetch(url);
@@ -1213,7 +1682,6 @@ async function sendRequest() {
     const highlighted = highlight(prettyJson);
     const resultCount = Array.isArray(data) ? data.length : (data.results ? data.results.length : null);
 
-    // Stats
     responseHeader.style.display = 'flex';
     responseStats.innerHTML = `
       <span class="stat-pill ${isOk ? 'stat-status-ok' : 'stat-status-err'}">
@@ -1237,7 +1705,6 @@ async function sendRequest() {
       <div class="response-code" id="responseCode">${highlighted}</div>
     `;
 
-    // Store raw for copy
     responseBlock.dataset.raw = prettyJson;
 
   } catch (err) {
